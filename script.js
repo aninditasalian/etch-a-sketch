@@ -28,6 +28,9 @@ function createGrid() {
             canvas.appendChild(addGrid);
 
             addGrid.addEventListener("mouseenter", () => {
+                if (rainbowColor == true) {
+                    paintColor = rainbowArray[Math.floor(Math.random() * rainbowArray.length)];
+                }
                 addGrid.style.backgroundColor = paintColor;
             })
         }
@@ -47,44 +50,62 @@ function clearGrid() {
 const black = document.querySelector(".black");
 black.addEventListener("click", (e) => {
     paintColor = "black";
+    rainbowColor = false;
 })
 
 const red = document.querySelector(".red");
 red.addEventListener("click", (e) => {
     paintColor = "red";
+    rainbowColor = false;
 })
 
 const blue = document.querySelector(".blue");
 blue.addEventListener("click", (e) => {
     paintColor = "blue";
+    rainbowColor = false;
 })
 
 const yellow = document.querySelector(".yellow");
 yellow.addEventListener("click", (e) => {
     paintColor = "yellow";
+    rainbowColor = false;
 })
 
 const green = document.querySelector(".green");
 green.addEventListener("click", (e) => {
     paintColor = "green";
+    rainbowColor = false;
 })
 
 const purple = document.querySelector(".purple");
 purple.addEventListener("click", (e) => {
     paintColor = "purple";
+    rainbowColor = false;
 })
 
 const orange = document.querySelector(".orange");
 orange.addEventListener("click", (e) => {
     paintColor = "orange";
+    rainbowColor = false;
 })
 
 const pink = document.querySelector(".pink");
 pink.addEventListener("click", (e) => {
     paintColor = "pink";
+    rainbowColor = false;
 })
 
 const gray = document.querySelector(".gray");
 gray.addEventListener("click", (e) => {
     paintColor = "gray";
+    rainbowColor = false;
+})
+
+const rainbowArray = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#8B00FF"];
+
+let rainbowColor = false;
+
+const rainbow = document.querySelector(".rainbow");
+rainbow.addEventListener("click", (e) => {
+    rainbowColor = true;
 })
