@@ -1,3 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bona Nova SC", serif;
+    font-size: large;
+}
+
+
 .canvasBorder {
     background-color: #d10000;
     display: flex;
@@ -27,12 +36,6 @@
     font-family: "Cedarville Cursive", cursive;
 }
 
-.magic,
-.screen {
-    font-family: "Bona Nova SC", serif;
-    font-size: large;
-}
-
 .canvas {
     display: flex;
     flex-wrap: wrap;
@@ -45,8 +48,6 @@
 }
 
 .grid {
-    height: 32px;
-    width: 32px;
     outline: 1px solid black;
 }
 
@@ -76,5 +77,43 @@
 
 .knobRight {
     margin-right: 10px;
+}
+
+.tools {
+    margin-right: 20px;
+    font-size: x-large;
+}
+
+.tools > div {
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.topColors,
+.bottomColors {
+    display: flex;
+    flex-direction: row;
+}
+
+.topColors button,
+.bottomColors button {
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    margin: 2.5px 5px;
+}
+
+input {
+    width: 50px;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
