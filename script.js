@@ -2,6 +2,22 @@ const canvas = document.querySelector(".canvas");
 
 let gridSize = 16;
 let paintColor = "black";
+let outlinesOn = true;
+
+let isDrawing = false;
+
+document.addEventListener("mousedown", () => {
+    isDrawing = true;
+})
+
+document.addEventListener("mouseup", () => {
+    isDrawing = false;
+})
+
+canvas.addEventListener("mouseleave", () => {
+    isDrawing = false;
+})
+
 
 const gridInput = document.querySelector("#gridInput");
 const create = document.querySelector(".create");
@@ -25,10 +41,22 @@ function createGrid() {
             addGrid.style.height = `${size}px`;
             addGrid.style.width = `${size}px`;
             addGrid.classList.add("grid");
+            if (outlinesOn) {
+                addGrid.classList.add("outline")
+            }
             canvas.appendChild(addGrid);
 
             addGrid.addEventListener("mouseenter", () => {
-                if (rainbowColor == true) {
+                if (!isDrawing) return;
+
+                if (rainbowColor) {
+                    paintColor = rainbowArray[Math.floor(Math.random() * rainbowArray.length)];
+                }
+                addGrid.style.backgroundColor = paintColor;
+            })
+
+            addGrid.addEventListener("mousedown", () => {
+                if (rainbowColor) {
                     paintColor = rainbowArray[Math.floor(Math.random() * rainbowArray.length)];
                 }
                 addGrid.style.backgroundColor = paintColor;
@@ -95,9 +123,9 @@ pink.addEventListener("click", (e) => {
     rainbowColor = false;
 })
 
-const gray = document.querySelector(".gray");
-gray.addEventListener("click", (e) => {
-    paintColor = "gray";
+const brown = document.querySelector(".brown");
+brown.addEventListener("click", (e) => {
+    paintColor = "#8B4513";
     rainbowColor = false;
 })
 
@@ -109,3 +137,33 @@ const rainbow = document.querySelector(".rainbow");
 rainbow.addEventListener("click", (e) => {
     rainbowColor = true;
 })
+
+const clear = document.querySelector(".clear");
+clear.addEventListener("click", (e) => {
+    const grids = document.querySelectorAll(".grid");
+    grids.forEach(grid => {
+        grid.style.backgroundColor = "transparent";
+    })
+})
+
+
+
+const showGrid = document.querySelector(".showGrid");
+showGrid.addEventListener("click", (e) => {
+    outlinesOn = !outlinesOn;
+    const grids = document.querySelectorAll(".grid");
+    grids.forEach(grid => {
+        grid.classList.toggle("outline");
+    })
+
+    showGrid.textContent = outlinesOn ? "hide grid" : "show grid";
+})
+
+
+function addGridOutlines() {
+    const grids = document.querySelectorAll(".grid");
+    grids.forEach(grid => {
+        grid.classList.add("outline")
+    })
+}
+

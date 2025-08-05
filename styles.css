@@ -4,6 +4,9 @@ body {
     align-items: center;
     font-family: "Bona Nova SC", serif;
     font-size: large;
+    background-color: #121212;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -43,11 +46,10 @@ body {
     width: 512px;
     background-color: white;
     box-sizing: border-box;
-    border-radius: 10px;
     box-shadow: inset -5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.grid {
+.outline {
     outline: 1px solid black;
 }
 
@@ -87,7 +89,7 @@ body {
 .tools > div {
     background-color: lightgrey;
     border-radius: 10px;
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -100,8 +102,8 @@ body {
 
 .topColors button,
 .bottomColors button {
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     border: 1px solid black;
     margin: 2.5px 5px;
 }
@@ -121,4 +123,37 @@ input {
   background:linear-gradient(90deg, Red, Orange, Yellow, Green, Blue, Indigo,violet);
   width:500px;
   height:500px;
+}
+
+.clear {
+    margin-top: 5px;
+}
+
+button {
+    font-family: "Bona Nova SC", serif;
+}
+
+
+
+button:hover,
+.colors .clear button:hover {
+    transform: translateY(1px);
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.topColors button:hover,
+.bottomColors button:hover {
+    transform: translateY(-1px);
+}
+
+.chooseGrid {
+    text-align: center;
+}
+
+.showGrid {
+    width: 90px;
 }
