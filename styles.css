@@ -5,7 +5,7 @@ body {
     font-family: "Bona Nova SC", serif;
     font-size: large;
     background-color: lightslategray;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
 }
 
@@ -15,10 +15,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 680px;
-    width: 650px;
+    height: 80%;
     flex-direction: column;
-    font-size:xx-large;
+    font-size:x-large;
     font-weight: 500;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -59,7 +58,7 @@ body {
     justify-content: space-between;
     width: 650px;
     margin-top: 20px;
-    margin-bottom: -35px;
+    margin-bottom: -30px;
 }
 
 .knobLeft,
@@ -121,8 +120,8 @@ input {
 
 .rainbow {
   background:linear-gradient(90deg, Red, Orange, Yellow, Green, Blue, Indigo,violet);
-  width:500px;
-  height:500px;
+  width:25px;
+  height:25px;
 }
 
 .clear {
@@ -157,3 +156,4 @@ button:active {
 .showGrid {
     width: 90px;
 }
+
