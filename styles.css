@@ -15,9 +15,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
     flex-direction: column;
     font-size:x-large;
+    height: 660px;
     font-weight: 500;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
